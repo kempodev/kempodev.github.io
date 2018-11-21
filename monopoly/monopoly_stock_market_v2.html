@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Monopoly Stock Exchange</title>
+
+	<style>
+		
+		table, th, td {
+		    border: 1px solid black;
+		    border-collapse: collapse;
+		}
+		
+		th, td {
+    		padding: 10px;
+		}
+
+	</style>
+
+</head>
+
+<body>
+
+<h1>Monopoly Stock Exchange</h1>
+
+<table>
+	<tr>
+		<td></td>
+		<th>Share 1</th>
+		<th>Share 2</th>
+		<th>Share 3</th>
+		<th>Share 4</th>
+		<th>Share 5</th>
+	<tr>
+		<td>Price</td>
+		<td id="price1">100</td>
+		<td id="price2">100</td>
+		<td id="price3">100</td>
+		<td id="price4">100</td>
+		<td id="price5">100</td>
+	<tr>
+		<td>Change</td>
+		<td id="random1">-</td>
+		<td id="random2">-</td>
+		<td id="random3">-</td>
+		<td id="random4">-</td>
+		<td id="random5">-</td>
+</table>
+	
+<br>
+<button onclick="changePrices()">Refresh prices</button>
+
+<script>
+
+// Muutosfunktio
+function changePrices() {
+
+	// Luo romahdusrandom
+	var crashRandom = Math.random();
+
+	if (crashRandom <= 0.05) {
+		// Luo romahdusmuuttujat
+		var random1 = Math.floor((Math.random() * 10) - 50);
+		var random2 = Math.floor((Math.random() * 10) - 50);
+		var random3 = Math.floor((Math.random() * 10) - 50);
+		var random4 = Math.floor((Math.random() * 10) - 50);
+		var random5 = Math.floor((Math.random() * 10) - 50);
+
+		alert("STOCK MARKET CRASH!");
+
+	} else {
+		// Luo satunnaismuuttujat
+		var random1 = Math.floor((Math.random() * 20) - 8);
+		var random2 = Math.floor((Math.random() * 20) - 8);
+		var random3 = Math.floor((Math.random() * 20) - 8);
+		var random4 = Math.floor((Math.random() * 20) - 8);
+		var random5 = Math.floor((Math.random() * 20) - 8);
+	}
+
+	// Ota nykyiset hinnat talteen
+	current1 = document.getElementById("price1").innerHTML;
+	current2 = document.getElementById("price2").innerHTML;
+	current3 = document.getElementById("price3").innerHTML;
+	current4 = document.getElementById("price4").innerHTML;
+	current5 = document.getElementById("price5").innerHTML;
+
+	// Laske uudet hinnat
+	var newPrice1 = Number(current1) + Number(random1);
+	var newPrice2 = Number(current2) + Number(random2);
+	var newPrice3 = Number(current3) + Number(random3);
+	var newPrice4 = Number(current4) + Number(random4);
+	var newPrice5 = Number(current5) + Number(random5);
+
+	// Aseta nollaksi, jos liian pieni
+	if (newPrice1 < 0) {
+		newPrice1 = 0;
+	}
+	if (newPrice2 < 0) {
+		newPrice2 = 0;
+	}
+	if (newPrice3 < 0) {
+		newPrice3 = 0;
+	}
+	if (newPrice4 < 0) {
+		newPrice4 = 0;
+	}
+	if (newPrice5 < 0) {
+		newPrice5 = 0;
+	}
+
+
+	// Päivitä hinnat
+	document.getElementById("price1").innerHTML = newPrice1;
+	document.getElementById("price2").innerHTML = newPrice2;
+	document.getElementById("price3").innerHTML = newPrice3;
+	document.getElementById("price4").innerHTML = newPrice4;
+	document.getElementById("price5").innerHTML = newPrice5;
+
+	// Päivitä muutokset
+	document.getElementById("random1").innerHTML = Number(random1);
+	document.getElementById("random2").innerHTML = Number(random2);
+	document.getElementById("random3").innerHTML = Number(random3);
+	document.getElementById("random4").innerHTML = Number(random4);
+	document.getElementById("random5").innerHTML = Number(random5);
+}
+
+</script>
+
+</body>
+</html>
