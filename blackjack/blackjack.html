@@ -165,7 +165,6 @@
             //function to check if input point value is over 21
             var checkBust = function(hand) {
                 if (countTotal(hand) > 21) {
-                    alert("Bust!");
                     return true;
                 }
             }
@@ -301,7 +300,12 @@
                 //console.log(deck);
                 //check for bust
                 if (checkBust(playerHand)) {
-                    endHand();
+                    hitButton.disabled = true;
+                    standButton.disabled = true;
+                    setTimeout(function() {
+                        alert("Bust");
+                        endHand();
+                    }, 900);
                 }
                 //if player has 21 force stand
                 if (playerTotal === 21) {
@@ -318,7 +322,10 @@
 
             //function for when player turn is over
             var stand = function() {
-                                
+                
+                hitButton.disabled = true;
+                standButton.disabled = true;                
+                
                 do {
                     var dealtCard = deck.shift();
                     dealerHand.push(dealtCard);
