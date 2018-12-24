@@ -218,8 +218,8 @@
 
             //function to check theres a proper bet before dealing
             var checkForDeal = function() {
-                if (Number(betBox.value) === 0) {
-                    alert("Place a bet");
+                if (Number(betBox.value) <= 0) {
+                    alert("Bet cannot be negative or zero");
                 } else if (betBox.value > money) {
                     alert("You don\'t have that much money");
                 } else {
