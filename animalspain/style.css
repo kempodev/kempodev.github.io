@@ -13,16 +13,17 @@ body {
 }
 
 .showcase {
-    background-image: url("img/showcase.jpg");
+    background-image: url("img/showcase2.jpg");
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center;
-    color: #e6e6e6;
     height: 100vh;
     width: 100vw;
     filter: grayscale(1);
-    padding-top: 10vh;
+    padding-top: 15vh;
     margin-bottom: 20px;
+    font-size: 1.1em;
+    color: #333333;
 }
 
 h3, h4 {
