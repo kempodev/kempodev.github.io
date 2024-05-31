@@ -1,42 +1,45 @@
 <!DOCTYPE html>
 <html>
-    <head>
-        <meta charset="utf-8">
-        <title></title>
-    </head>
-    <body>
+  <head>
+    <meta charset="utf-8" />
+    <title></title>
+  </head>
+  <body>
+    <h1>To Do List</h1>
+    <p>
+      Add items by writing something in the text field and clicking the
+      button.<br />
+      Remove an last item by clicking it.
+    </p>
+    <input type="text" id="inputField" name="Write something" />
+    <button
+      type="button"
+      id="saveButton"
+      onClick="save()"
+      title="Click to add to list"
+    >
+      Add to list
+    </button>
+    <ul id="list"></ul>
 
-        <h1>To Do List</h1>
-        <p>Add items by writing something in the text field and clicking the button.<br>
-            Remove the last item by clicking the list.
-        </p>
-        <input type="text" id="inputField" name="Write something">
-        <button type="button" id="saveButton" onClick=save() title="Click to add to list">Add to list</button>
-        <ul id="list">
-            
-        </ul>
-        
-        <script type="text/javascript">
-            var list = document.getElementById("list");
-            
-            var save = function(){
-                if (document.getElementById("inputField").value != "") {
-                    var input = document.getElementById("inputField").value;
-                    var listitem = document.createElement("li");
-                    listitem.textContent = input;
-                    list.appendChild(listitem);
-                    listitem.addEventListener("click", remove);
-                    document.getElementById("inputField").value = "";
-                    document.getElementById("inputField").focus();
-                }
-            }
+    <script type="text/javascript">
+      var list = document.getElementById('list')
 
-            var remove = function(e) {
-                var listLength = list.childNodes.length;
-                list.removeChild(list.childNodes[listLength - 1]);
-            }
+      var save = function () {
+        if (document.getElementById('inputField').value != '') {
+          var input = document.getElementById('inputField').value
+          var listitem = document.createElement('li')
+          listitem.textContent = input
+          list.appendChild(listitem)
+          listitem.addEventListener('click', remove)
+          document.getElementById('inputField').value = ''
+          document.getElementById('inputField').focus()
+        }
+      }
 
-        </script>
-
-    </body>
-</html> 
+      var remove = function (e) {
+        list.removeChild(e.target)
+      }
+    </script>
+  </body>
+</html>
