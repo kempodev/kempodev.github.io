@@ -1,0 +1,39 @@
+---
+import BaseLayout from '@layouts/BaseLayout.astro'
+import { Icon } from 'astro-icon/components'
+---
+
+<BaseLayout title='Contact - Kempo'>
+  <section>
+    <h1 class='font-bold text-2xl text-center my-8 md:my-16'>Contact</h1>
+    <div
+      class='mt-4 px-4 container mx-auto flex flex-col md:flex-row items-center justify-center md:gap-16 gap-8'
+    >
+      <div class='flex flex-col items-center gap-2 text-lg'>
+        <Icon name='mdi:email-outline' class='w-8 h-8' />
+        <a href={'mailto:kempo@kempo.fi'} class='hover:underline'> Email</a>
+      </div>
+      <div class='flex flex-col items-center gap-2 text-lg'>
+        <Icon name='mdi:linkedin' class='w-8 h-8' />
+        <a
+          href={'https://www.linkedin.com/in/joonakemppainen/'}
+          class='hover:underline'
+          target='_blank'
+        >
+          LinkedIn
+        </a>
+      </div>
+
+      <div class='flex flex-col items-center gap-2 text-lg'>
+        <Icon name='mdi:github' class='w-8 h-8' />
+        <a
+          href={'https://github.com/kempodev'}
+          class='hover:underline'
+          target='_blank'
+        >
+          Github
+        </a>
+      </div>
+    </div>
+  </section>
+</BaseLayout>

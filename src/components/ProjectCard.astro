@@ -1,0 +1,60 @@
+---
+import { Image } from 'astro:assets'
+import type { Project } from 'src/pages/projects.astro'
+import Tag from './Tag.astro'
+
+type Props = {
+  project: Project
+}
+
+const { project } = Astro.props
+---
+
+<div
+  class='bg-gray-800 rounded-lg overflow-hidden text-slate-200 flex flex-col'
+>
+  {
+    project.image ? (
+      <Image
+        src={project.image}
+        width={1200}
+        height={1200}
+        alt=''
+        class='w-full h-52 object-cover blur-sm'
+      />
+    ) : (
+      <div class='w-full h-52 object-cover bg-gradient-to-r from-purple-500 to-indigo-700' />
+    )
+  }
+  <div class='p-5 flex flex-col grow'>
+    <div class='grow'>
+      <h2 class='text-xl font-bold mb-2'>{project.title}</h2>
+      <p class='text-gray-400'>{project.description}</p>
+    </div>
+    <div>
+      <div class='flex gap-4 my-4'>
+        {
+          project.codeUrl !== undefined && (
+            <a
+              href={project.codeUrl}
+              target='_blank'
+              class='text-purple-500 hover:text-purple-400 hover:underline'
+            >
+              See Code
+            </a>
+          )
+        }
+        <a
+          href={project.demoUrl}
+          target='_blank'
+          class='text-purple-500 hover:text-purple-400 hover:underline'
+        >
+          View Demo
+        </a>
+      </div>
+      <div class='flex gap-2 flex-wrap'>
+        {project.tags.map((tag) => <Tag tag={tag} />)}
+      </div>
+    </div>
+  </div>
+</div>

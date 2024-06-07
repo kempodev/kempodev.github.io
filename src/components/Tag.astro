@@ -1,0 +1,13 @@
+---
+type Props = {
+  tag: string
+}
+
+const { tag } = Astro.props
+---
+
+<span
+  class='border-emerald-800 px-2 rounded text-sm bg-indigo-700 text-gray-200 uppercase'
+>
+  {tag}
+</span>
