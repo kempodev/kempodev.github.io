@@ -4,7 +4,10 @@ import BaseLayout from '@layouts/BaseLayout.astro'
 import myImage from '@assets/oma.jpg'
 ---
 
-<BaseLayout title='Kempo'>
+<BaseLayout
+  title='KempoDev'
+  metaDescription='KempoDev is a personal portfolio showcasing the skills and projects of a passionate developer. Explore innovative web solutions, coding expertise and a commitment to quality in software development.'
+>
   <section
     class='flex flex-col md:flex-row items-center md:justify-center p-8 mt-8'
   >
@@ -12,18 +15,17 @@ import myImage from '@assets/oma.jpg'
       <Image
         src={myImage}
         alt='Portrait of me'
-        class='rounded-full'
-        height={200}
+        class='rounded-full h-52 w-52'
+        height={300}
         loading='eager'
       />
     </div>
     <div class='mt-4 md:mt-0 md:ml-8'>
       <h1 class='text-3xl font-semibold mb-2'>Web Developer</h1>
       <ul class='list-disc list-inside text-left'>
-        <li class='mb-2'>HTML, CSS, Javascript</li>
-        <li class='mb-2'>React</li>
-        <li class='mb-2'>Next.js</li>
-        <li class='mb-2'>Node.js</li>
+        <li class='mb-2'>HTML, CSS, Javascript, Typescript</li>
+        <li class='mb-2'>React, Next.js, Astro</li>
+        <li class='mb-2'>Node.js, Python</li>
       </ul>
     </div>
   </section>
