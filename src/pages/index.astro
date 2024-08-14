@@ -1,11 +1,22 @@
 ---
-import BaseLayout from '../layouts/BaseLayout.astro'
+import { Image } from 'astro:assets'
+import BaseLayout from '@layouts/BaseLayout.astro'
+import myImage from '@assets/oma.jpg'
 ---
 
 <BaseLayout title='Kempo'>
   <section
     class='flex flex-col md:flex-row items-center md:justify-center p-8 mt-8'
   >
+    <div>
+      <Image
+        src={myImage}
+        alt='Portrait of me'
+        class='rounded-full'
+        height={200}
+        loading='eager'
+      />
+    </div>
     <div class='mt-4 md:mt-0 md:ml-8'>
       <h1 class='text-3xl font-semibold mb-2'>Web Developer</h1>
       <ul class='list-disc list-inside text-left'>
